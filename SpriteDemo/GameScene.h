@@ -8,6 +8,26 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface GameScene : SKScene
+typedef enum : NSUInteger {
+    State_Idle,
+    State_Start,
+    State_Stop,
+} GameState;
+
+@interface GameScene : SKScene {
+ 
+    CGPoint velocityY;
+    CGPoint velocityRote;
+    
+    CGPoint beginTouch;
+    CGPoint endTouch;
+    
+    NSTimeInterval lastUpdateTime;
+    NSTimeInterval deltaTime;
+    
+    BOOL isRote;
+}
+
+@property (nonatomic) GameState currentState;
 
 @end
