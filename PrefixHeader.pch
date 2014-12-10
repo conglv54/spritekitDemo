@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  SpriteDemo
+//
+//  Created by Lê Công on 12/10/14.
+//  Copyright (c) 2014 Lê Công. All rights reserved.
+//
+
+#ifndef SpriteDemo_PrefixHeader_pch
+#define SpriteDemo_PrefixHeader_pch
+
+#import "Utils.h"
+
+#endif
