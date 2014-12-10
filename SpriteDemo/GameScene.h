@@ -8,9 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface GameScene : SKScene {
+@interface GameScene : SKScene
 
-}
+@property (nonatomic) BOOL isAuto;
+@property (nonatomic) BOOL isRunning;
+@property (nonatomic) BOOL isRote;
 
 - (void)start;
 

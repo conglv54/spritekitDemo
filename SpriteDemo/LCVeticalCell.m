@@ -64,6 +64,10 @@
     } 
 }
 
+- (void)stepState {
+    
+}
+
 - (void)update:(NSTimeInterval)deltaTime {
     
     SKSpriteNode *minNode;
@@ -105,7 +109,6 @@
     if (isGenResult) {
         for (SKSpriteNode *node in _arrCell) {
             if ([node.name isEqualToString:@"Result"]) {
-                NSLog(@"%f", node.position.y);
                 if (node.position.y <= 192) {
                     CGFloat distance = 192 - node.position.y;
                     [node setPosition:CGPointMake(node.position.x, 192)];
@@ -155,7 +158,16 @@
 - (void)reset {
     velocityY.y = 0;
     extraTime = 0;
-    _currentState = State_Idle;
+    if (_gameScene.isAuto) {
+        _currentState = State_Start;
+    } else {
+        _currentState = State_Idle;
+    }
+
     isGenResult = FALSE;
+    _gameScene.isRote = FALSE;
+    if (currentIndex == 4) {
+        _gameScene.isRunning = FALSE;        
+    }
 }
 @end

@@ -26,6 +26,7 @@
     if (self) {
         
         arrVerticalCell = [NSMutableArray new];
+        _isAuto = TRUE;
         
         for (int i = 0 ; i < 5; i ++) {
             LCVeticalCell *verticalCell = [[LCVeticalCell alloc] initWithIndex:i];
@@ -45,13 +46,17 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
+    if (_isRunning) {
+        return;
+    }
+
     for (UITouch *touch in touches)
     {
         CGPoint location  = [touch locationInNode:self];
         SKNode *node = [self nodeAtPoint:location];
         
         if (node != self) {
-            if ([node.name isEqualToString:@"Cell"] )
+            if ([node.name isEqualToString:@"Cell"] || [node.name isEqualToString:@"Result"] )
             {
                 CGPoint previousLocation = [touch previousLocationInNode:self];
                 float diff = location.y - previousLocation.y;
@@ -78,8 +83,13 @@
         return;
     }
     
+    if (_isRunning) {
+        return;
+    }
+
     CGFloat distance = locationEnd.y - locationBegin.y;
     if (distance <  -100) {
+        _isRote = TRUE;
         cell.currentState = State_Start;
     }
 }
@@ -102,6 +112,15 @@
 }
 
 - (void)start {
+    if (_isRunning) {
+        return;
+    }
+    
+    if (_isRote) {
+        return;
+    }
+    _isRunning = TRUE;
+    
     for (int i = 0; i < arrVerticalCell.count; i ++) {
         LCVeticalCell *cell = arrVerticalCell[i];
         cell.currentState = State_Start;

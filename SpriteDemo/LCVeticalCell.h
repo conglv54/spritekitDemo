@@ -24,5 +24,6 @@ typedef enum : NSUInteger {
 - (id)initWithIndex:(int)index;
 - (void)changeLocationWithDistance:(CGFloat)distance;
 - (void)update:(NSTimeInterval)deltaTime;
+- (void)stepState;
 
 @end
