@@ -39,6 +39,9 @@
 		6E3E46901A36B067000DD2FA /* jackPot1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E46791A36B067000DD2FA /* jackPot1@2x.png */; };
 		6E3E46911A36B067000DD2FA /* jackPot2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E467A1A36B067000DD2FA /* jackPot2@2x.png */; };
 		6E3E46921A36B067000DD2FA /* jackPot3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E467B1A36B067000DD2FA /* jackPot3@2x.png */; };
+		6E8514FF1A38458A00AE65C2 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8514FE1A38458A00AE65C2 /* Utils.m */; };
+		6E8515021A3845F500AE65C2 /* LCGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8515011A3845F500AE65C2 /* LCGrid.m */; };
+		6E8515081A384A3100AE65C2 /* LCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8515071A384A3100AE65C2 /* LCCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,13 @@
 		6E3E46791A36B067000DD2FA /* jackPot1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jackPot1@2x.png"; sourceTree = "<group>"; };
 		6E3E467A1A36B067000DD2FA /* jackPot2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jackPot2@2x.png"; sourceTree = "<group>"; };
 		6E3E467B1A36B067000DD2FA /* jackPot3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jackPot3@2x.png"; sourceTree = "<group>"; };
+		6E8514FC1A38456600AE65C2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		6E8514FD1A38458A00AE65C2 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		6E8514FE1A38458A00AE65C2 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		6E8515001A3845F500AE65C2 /* LCGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCGrid.h; sourceTree = "<group>"; };
+		6E8515011A3845F500AE65C2 /* LCGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCGrid.m; sourceTree = "<group>"; };
+		6E8515061A384A3100AE65C2 /* LCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCCell.h; path = ../LCCell.h; sourceTree = "<group>"; };
+		6E8515071A384A3100AE65C2 /* LCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCCell.m; path = ../LCCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +150,12 @@
 				6E3E46451A36AFD7000DD2FA /* GameViewController.h */,
 				6E3E46461A36AFD7000DD2FA /* GameViewController.m */,
 				6E3E46481A36AFD7000DD2FA /* Main.storyboard */,
+				6E8514FD1A38458A00AE65C2 /* Utils.h */,
+				6E8514FE1A38458A00AE65C2 /* Utils.m */,
+				6E8515001A3845F500AE65C2 /* LCGrid.h */,
+				6E8515011A3845F500AE65C2 /* LCGrid.m */,
+				6E8515061A384A3100AE65C2 /* LCCell.h */,
+				6E8515071A384A3100AE65C2 /* LCCell.m */,
 				6E3E464B1A36AFD7000DD2FA /* Images.xcassets */,
 				6E3E464D1A36AFD7000DD2FA /* LaunchScreen.xib */,
 				6E3E46641A36B067000DD2FA /* Resource */,
@@ -151,6 +167,7 @@
 		6E3E46391A36AFD6000DD2FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E8514FC1A38456600AE65C2 /* PrefixHeader.pch */,
 				6E3E463A1A36AFD6000DD2FA /* Info.plist */,
 				6E3E463B1A36AFD7000DD2FA /* main.m */,
 			);
@@ -328,9 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E8515081A384A3100AE65C2 /* LCCell.m in Sources */,
 				6E3E46471A36AFD7000DD2FA /* GameViewController.m in Sources */,
 				6E3E463F1A36AFD7000DD2FA /* AppDelegate.m in Sources */,
 				6E3E46421A36AFD7000DD2FA /* GameScene.m in Sources */,
+				6E8514FF1A38458A00AE65C2 /* Utils.m in Sources */,
+				6E8515021A3845F500AE65C2 /* LCGrid.m in Sources */,
 				6E3E463C1A36AFD7000DD2FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +546,7 @@
 				6E3E46601A36AFD7000DD2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E3E46611A36AFD7000DD2FA /* Build configuration list for PBXNativeTarget "SpriteDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +555,7 @@
 				6E3E46631A36AFD7000DD2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

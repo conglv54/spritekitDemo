@@ -29,9 +29,15 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
 
     if (self) {
         
+        for (int j = 0; j < 5; j ++) {
+            for (int i = 0 ; i < 6; i ++) {
+                int slot = arc4random()%4;
+                [self genareObjectWithSlot:slot atPosition:CGPointMake(100 + 72*j, 50 + (65*i))];
+            }
+        }
+        
         for (int i = 0 ; i < 6; i ++) {
-            int slot = arc4random()%4;
-            [self genareObjectWithSlot:slot atPosition:CGPointMake(100, 50 + (65*i))];
+            arrVelocity[i] = MAX_VELOCITY;
         }
     }
     return self;
@@ -121,30 +127,19 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
         case State_Idle:
             for (int i = 0 ; i < self.children.count; i ++) {
                 
-                SKNode *minNode = self.children[0];
-                
-                if ([minNode.name isEqualToString:@"spriteNode"]) {
-                    if (minNode.position.y < 35) {
-                        
-                        [minNode removeFromParent];
-                        
-                        SKSpriteNode *maxNode = self.children[self.children.count -1];
-                        int slot = arc4random()%4;
-                        
-                        [self genareObjectWithSlot:slot atPosition:CGPointMake(100, maxNode.position.y + maxNode.size.height)];
-                    }
-                }
-                
-                SKNode *maxNode = self.children[self.children.count - 1];
-                if ([maxNode.name isEqualToString:@"spriteNode"]) {
-                    if (maxNode.position.y > 440) {
-                        
-                        [maxNode removeFromParent];
-                        
-                        SKSpriteNode *minNode = self.children[0];
-                        int index = arc4random()%4;
-                        
-                        [self genareObjectWithSlot:index atIndex:0 andPosition:CGPointMake(100, minNode.position.y - minNode.size.height)];
+                if (i % 6 == 0 ) {
+                    SKNode *minNode = self.children[i];
+                    
+                    if ([minNode.name isEqualToString:@"spriteNode"]) {
+                        if (minNode.position.y < 35) {
+                            
+                            [minNode removeFromParent];
+                            
+                            SKSpriteNode *maxNode = self.children[i + 4];
+                            int slot = arc4random()%4;
+                            
+                            [self genareObjectWithSlot:slot atIndex:i+5 andPosition:CGPointMake(maxNode.position.x, maxNode.position.y + maxNode.size.height)];
+                        }
                     }
                 }
             }
@@ -168,15 +163,24 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
             break;
             
         case State_Stop:
-            if (!isRote) {
-                velocityY.y = velocityY.y + OBJECT_VELOCITY*deltaTime;
-            } else {
-                velocityY.y = velocityY.y + velocityRote.y*deltaTime;
-            }
 
-            if (velocityY.y > 0) {
+            changeStateTime = changeStateTime + deltaTime;
+            
+            for (int i = 0; i < 5; i ++) {
+                if (changeStateTime > i*0.125) {
+                    if (!isRote) {
+                        arrVelocity[i] = arrVelocity[i] + OBJECT_VELOCITY*deltaTime;
+                    } else {
+                        arrVelocity[i] = arrVelocity[i] + velocityRote.y*deltaTime;
+                    }
+                }
+            }
+            
+            if (arrVelocity[5] > 0) {
                 self.currentState = State_Idle;
-                velocityY.y = 0;
+                for (int i = 0; i < 5; i++) {
+                    arrVelocity[i] = 0;
+                }
             }
             
             break;
@@ -184,22 +188,30 @@ static inline CGPoint CGPointMultiplyScalar(const CGPoint a, const CGFloat b)
             break;
     }
     
-    CGPoint amtToMove = CGPointMultiplyScalar(velocityY, deltaTime);
+
     
     for (int i = 0; i < self.children.count; i ++) {
+        CGPoint amtToMove;
+        if (i >=0 && i <=5) {
+            amtToMove = CGPointMultiplyScalar(velocityY, deltaTime);
+        }
+        
         SKSpriteNode *node = self.children [i];
         node.position = CGPointAdd(node.position, amtToMove);
-        SKNode *minNode = self.children[0];
         
-        if ([minNode.name isEqualToString:@"spriteNode"]) {
-            if (minNode.position.y < 35) {
-                
-                [minNode removeFromParent];
-                
-                SKSpriteNode *maxNode = self.children[self.children.count -1];
-                int slot = arc4random()%4;
-                
-                [self genareObjectWithSlot:slot atPosition:CGPointMake(100, maxNode.position.y + maxNode.size.height)];
+        if (i % 6 == 0 ) {
+            SKNode *minNode = self.children[i];
+            
+            if ([minNode.name isEqualToString:@"spriteNode"]) {
+                if (minNode.position.y < 35) {
+                    
+                    [minNode removeFromParent];
+                    
+                    SKSpriteNode *maxNode = self.children[i + 4];
+                    int slot = arc4random()%4;
+                    
+                    [self genareObjectWithSlot:slot atIndex:i+5 andPosition:CGPointMake(maxNode.position.x, maxNode.position.y + maxNode.size.height)];
+                }
             }
         }
         

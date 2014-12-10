@@ -25,6 +25,12 @@ typedef enum : NSUInteger {
     NSTimeInterval lastUpdateTime;
     NSTimeInterval deltaTime;
     
+    NSTimeInterval changeStateTime;
+    
+    NSArray *arrChangeStateTime;
+    
+    float arrVelocity[6];
+    
     BOOL isRote;
 }
 
