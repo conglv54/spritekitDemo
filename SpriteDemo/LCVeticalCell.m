@@ -1,0 +1,161 @@
+//
+//  LCVeticalCell.m
+//  SpriteDemo
+//
+//  Created by Le Cong on 12/10/14.
+//  Copyright (c) 2014 Lê Công. All rights reserved.
+//
+
+#import "LCVeticalCell.h"
+
+@implementation LCVeticalCell {
+    NSMutableArray *_arrCell;
+    CGPoint velocityY;
+    
+    BOOL isGenResult;
+    
+    CGFloat extraTime;
+    
+    int currentIndex;
+}
+
+- (id)initWithIndex:(int)index {
+    self = [super init];
+    if (self) {
+        _arrCell = [NSMutableArray new];
+        currentIndex = index;
+        
+        for (int i = 0; i < 6; i ++) {
+            CGPoint position = CGPointMake(102.5+75*index, 62 + (65*i));
+            int slot = arc4random()%4;
+            NSString *imageName = [NSString stringWithFormat:@"jackPot%d", slot];
+            SKSpriteNode *node = [self generateObjectWithPosition:position andImageName:imageName];
+            [_arrCell addObject:node];
+        }
+    }
+    return self;
+}
+
+- (SKSpriteNode *)generateObjectWithPosition:(CGPoint) position andImageName:(NSString *)imageName{
+    
+    SKTexture *texture = [SKTexture textureWithImageNamed:imageName];
+    
+    SKSpriteNode *note = [[SKSpriteNode alloc] initWithTexture:texture];
+    note.position = position;
+    note.anchorPoint = CGPointMake(0, 0);
+    note.name = @"Cell";
+    note.size = CGSizeMake(72, 65);
+    
+    return note;
+}
+
+- (void)setGameScene:(GameScene *)gameScene {
+    _gameScene = gameScene;
+    
+    for (SKSpriteNode *node in _arrCell) {
+        [_gameScene addChild:node];
+    }
+}
+
+- (void)changeLocationWithDistance:(CGFloat)distance {
+    for (SKSpriteNode *node in _arrCell) {
+        CGPoint newPosition = CGPointMake(node.position.x, node.position.y + distance);
+        node.position = newPosition;
+    } 
+}
+
+- (void)update:(NSTimeInterval)deltaTime {
+    
+    SKSpriteNode *minNode;
+    SKSpriteNode *maxNode;
+    
+    switch (_currentState) {
+        case State_Idle:
+            break;
+        case  State_Start:
+            velocityY.y = velocityY.y - OBJECT_VELOCITY*deltaTime;
+            
+            if (velocityY.y < - MAX_VELOCITY) {
+                velocityY.y = - MAX_VELOCITY;
+                extraTime = extraTime + deltaTime;
+                if (extraTime > currentIndex*0.25) {
+                    _currentState = State_Stop;
+                }
+            }
+            
+            break;
+            
+        case State_Stop:
+            velocityY.y = velocityY.y + OBJECT_VELOCITY*deltaTime;
+            if (velocityY.y > 0) {
+                [self reset];
+            }
+            
+            break;
+        default:
+            break;
+    }
+    
+    CGPoint amtToMove = CGPointMultiplyScalar(velocityY, deltaTime);
+    
+    for (SKSpriteNode *node in _arrCell) {
+        node.position = CGPointAdd(node.position, amtToMove);
+    }
+    
+    if (isGenResult) {
+        for (SKSpriteNode *node in _arrCell) {
+            if ([node.name isEqualToString:@"Result"]) {
+                NSLog(@"%f", node.position.y);
+                if (node.position.y <= 192) {
+                    CGFloat distance = 192 - node.position.y;
+                    [node setPosition:CGPointMake(node.position.x, 192)];
+                    
+                    for (SKSpriteNode *node in _arrCell) {
+                        if ([node.name isEqualToString:@"Cell"]) {
+                            [node setPosition:CGPointMake(node.position.x, node.position.y + distance)];
+                        }
+                    }
+                    
+                    [self reset];
+                    return;
+                }
+                
+            }
+        }
+    }
+    
+    minNode = [_arrCell objectAtIndex:0];
+    if (minNode.position.y < 0) {
+        [minNode removeFromParent];
+        [_arrCell removeObject:minNode];
+        
+        maxNode = [_arrCell objectAtIndex:4];
+        int slot = arc4random()%4;
+        NSString *name = @"Cell";
+        
+        if (velocityY.y > - 550 && _currentState == State_Stop && isGenResult == FALSE) {
+            isGenResult = TRUE;
+            slot = _result;
+            name = @"Result";
+        }
+        
+        SKSpriteNode *node = [self generateObjectWithPosition:CGPointMake(maxNode.position.x, maxNode.position.y + maxNode.size.height) andImageName:[self imageNameWithSlot:slot]];
+        node.name = name;
+        [_arrCell addObject:node];
+        [self.gameScene addChild:node];
+        
+    }
+}
+
+- (NSString *)imageNameWithSlot:(int)slot {
+    NSString *imageName = [NSString stringWithFormat:@"jackPot%d", slot];
+    return imageName;
+}
+
+- (void)reset {
+    velocityY.y = 0;
+    extraTime = 0;
+    _currentState = State_Idle;
+    isGenResult = FALSE;
+}
+@end

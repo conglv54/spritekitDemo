@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5868DB2D1A38829F000CCED1 /* LCVeticalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5868DB2C1A38829F000CCED1 /* LCVeticalCell.m */; };
 		6E3E463C1A36AFD7000DD2FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E463B1A36AFD7000DD2FA /* main.m */; };
 		6E3E463F1A36AFD7000DD2FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E463E1A36AFD7000DD2FA /* AppDelegate.m */; };
 		6E3E46421A36AFD7000DD2FA /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E46411A36AFD7000DD2FA /* GameScene.m */; };
@@ -40,8 +41,6 @@
 		6E3E46911A36B067000DD2FA /* jackPot2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E467A1A36B067000DD2FA /* jackPot2@2x.png */; };
 		6E3E46921A36B067000DD2FA /* jackPot3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3E467B1A36B067000DD2FA /* jackPot3@2x.png */; };
 		6E8514FF1A38458A00AE65C2 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8514FE1A38458A00AE65C2 /* Utils.m */; };
-		6E8515021A3845F500AE65C2 /* LCGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8515011A3845F500AE65C2 /* LCGrid.m */; };
-		6E8515081A384A3100AE65C2 /* LCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8515071A384A3100AE65C2 /* LCCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5868DB2B1A38829F000CCED1 /* LCVeticalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVeticalCell.h; sourceTree = "<group>"; };
+		5868DB2C1A38829F000CCED1 /* LCVeticalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVeticalCell.m; sourceTree = "<group>"; };
+		5868DB2E1A38A21B000CCED1 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6E3E46361A36AFD6000DD2FA /* SpriteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3E463A1A36AFD6000DD2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E3E463B1A36AFD7000DD2FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,13 +96,8 @@
 		6E3E46791A36B067000DD2FA /* jackPot1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jackPot1@2x.png"; sourceTree = "<group>"; };
 		6E3E467A1A36B067000DD2FA /* jackPot2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jackPot2@2x.png"; sourceTree = "<group>"; };
 		6E3E467B1A36B067000DD2FA /* jackPot3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jackPot3@2x.png"; sourceTree = "<group>"; };
-		6E8514FC1A38456600AE65C2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		6E8514FD1A38458A00AE65C2 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		6E8514FE1A38458A00AE65C2 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		6E8515001A3845F500AE65C2 /* LCGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCGrid.h; sourceTree = "<group>"; };
-		6E8515011A3845F500AE65C2 /* LCGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCGrid.m; sourceTree = "<group>"; };
-		6E8515061A384A3100AE65C2 /* LCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCCell.h; path = ../LCCell.h; sourceTree = "<group>"; };
-		6E8515071A384A3100AE65C2 /* LCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCCell.m; path = ../LCCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,10 +149,8 @@
 				6E3E46481A36AFD7000DD2FA /* Main.storyboard */,
 				6E8514FD1A38458A00AE65C2 /* Utils.h */,
 				6E8514FE1A38458A00AE65C2 /* Utils.m */,
-				6E8515001A3845F500AE65C2 /* LCGrid.h */,
-				6E8515011A3845F500AE65C2 /* LCGrid.m */,
-				6E8515061A384A3100AE65C2 /* LCCell.h */,
-				6E8515071A384A3100AE65C2 /* LCCell.m */,
+				5868DB2B1A38829F000CCED1 /* LCVeticalCell.h */,
+				5868DB2C1A38829F000CCED1 /* LCVeticalCell.m */,
 				6E3E464B1A36AFD7000DD2FA /* Images.xcassets */,
 				6E3E464D1A36AFD7000DD2FA /* LaunchScreen.xib */,
 				6E3E46641A36B067000DD2FA /* Resource */,
@@ -167,7 +162,7 @@
 		6E3E46391A36AFD6000DD2FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E8514FC1A38456600AE65C2 /* PrefixHeader.pch */,
+				5868DB2E1A38A21B000CCED1 /* PrefixHeader.pch */,
 				6E3E463A1A36AFD6000DD2FA /* Info.plist */,
 				6E3E463B1A36AFD7000DD2FA /* main.m */,
 			);
@@ -345,12 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E8515081A384A3100AE65C2 /* LCCell.m in Sources */,
+				5868DB2D1A38829F000CCED1 /* LCVeticalCell.m in Sources */,
 				6E3E46471A36AFD7000DD2FA /* GameViewController.m in Sources */,
 				6E3E463F1A36AFD7000DD2FA /* AppDelegate.m in Sources */,
 				6E3E46421A36AFD7000DD2FA /* GameScene.m in Sources */,
 				6E8514FF1A38458A00AE65C2 /* Utils.m in Sources */,
-				6E8515021A3845F500AE65C2 /* LCGrid.m in Sources */,
 				6E3E463C1A36AFD7000DD2FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +468,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = SpriteDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -486,6 +482,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = SpriteDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
