@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 
+#define HEIGHT_SCRENE [UIScreen mainScreen].applicationFrame.size.height
+#define WIDTH_SCRENE UIScreen mainScreen].applicationFrame.size.width
+
 static const float OBJECT_VELOCITY = 500;
 static const float MAX_VELOCITY = 1000;
 

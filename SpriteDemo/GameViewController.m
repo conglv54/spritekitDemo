@@ -7,16 +7,19 @@
 //
 
 #import "GameViewController.h"
+#import "UIBuyGoldVIew.h"
 #import "GameScene.h"
 
 @implementation GameViewController {
     GameScene *scene;
+    UIBuyGoldVIew *buyGold;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
+    buyGold = [[UIBuyGoldVIew alloc] init];
 }
 
 - (void)viewWillLayoutSubviews {
@@ -52,6 +55,10 @@
     }
     
     scene.isAuto = !scene.isAuto;
+}
+
+- (IBAction)BuyCoint:(id)sender {
+    [buyGold showinView:self.view];
 }
 
 - (void)didReceiveMemoryWarning
