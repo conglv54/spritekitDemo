@@ -14,6 +14,7 @@
 @property (nonatomic) BOOL isRunning;
 @property (nonatomic) BOOL isRote;
 
+@property (nonatomic) int timerCount;
 - (void)start;
 
 @end

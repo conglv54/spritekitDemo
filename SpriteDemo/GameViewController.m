@@ -39,7 +39,19 @@
 }
 
 - (IBAction)spin:(id)sender {
+    if (scene.isAuto || scene.isRote) {
+        return;
+    }
+    
     [scene start];
+}
+
+- (IBAction)autoGame:(id)sender {
+    if (scene.isRote || scene.isRunning) {
+        return;
+    }
+    
+    scene.isAuto = !scene.isAuto;
 }
 
 - (void)didReceiveMemoryWarning

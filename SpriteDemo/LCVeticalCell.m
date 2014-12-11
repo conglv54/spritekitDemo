@@ -81,9 +81,11 @@
             
             if (velocityY.y < - MAX_VELOCITY) {
                 velocityY.y = - MAX_VELOCITY;
-                extraTime = extraTime + deltaTime;
-                if (extraTime > currentIndex*0.25) {
-                    _currentState = State_Stop;
+                if (_gameScene.isAuto || _gameScene.isRote) {
+                    extraTime = extraTime + deltaTime;
+                    if (extraTime > currentIndex*0.25) {
+                        _currentState = State_Stop;
+                    }                    
                 }
             }
             
@@ -128,11 +130,10 @@
     }
     
     minNode = [_arrCell objectAtIndex:0];
+    maxNode = [_arrCell objectAtIndex:5];
+    
     if (minNode.position.y < 0) {
-        [minNode removeFromParent];
-        [_arrCell removeObject:minNode];
         
-        maxNode = [_arrCell objectAtIndex:4];
         int slot = arc4random()%4;
         NSString *name = @"Cell";
         
@@ -146,6 +147,22 @@
         node.name = name;
         [_arrCell addObject:node];
         [self.gameScene addChild:node];
+
+        [minNode removeFromParent];
+        [_arrCell removeObject:minNode];
+    }
+    
+    if (maxNode.position.y > 452) {
+        int slot = arc4random()%4;
+        NSString *name = @"Cell";
+
+        SKSpriteNode *node = [self generateObjectWithPosition:CGPointMake(minNode.position.x, minNode.position.y - minNode.size.height) andImageName:[self imageNameWithSlot:slot]];
+        node.name = name;
+        [_arrCell insertObject:node atIndex:0];
+        [self.gameScene addChild:node];
+        
+        [maxNode removeFromParent];
+        [_arrCell removeObject:maxNode];
         
     }
 }
@@ -158,14 +175,12 @@
 - (void)reset {
     velocityY.y = 0;
     extraTime = 0;
-    if (_gameScene.isAuto) {
-        _currentState = State_Start;
-    } else {
-        _currentState = State_Idle;
-    }
-
+    _currentState = State_Idle;
     isGenResult = FALSE;
+    
+    _gameScene.timerCount = 0;
     _gameScene.isRote = FALSE;
+    
     if (currentIndex == 4) {
         _gameScene.isRunning = FALSE;        
     }

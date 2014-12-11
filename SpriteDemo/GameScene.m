@@ -17,6 +17,8 @@
     
     CGPoint locationBegin;
     int index;
+    
+    NSTimer *timer;
 }
 
 - (id)initWithSize:(CGSize)size {
@@ -26,7 +28,7 @@
     if (self) {
         
         arrVerticalCell = [NSMutableArray new];
-        _isAuto = TRUE;
+        _isAuto = FALSE;
         
         for (int i = 0 ; i < 5; i ++) {
             LCVeticalCell *verticalCell = [[LCVeticalCell alloc] initWithIndex:i];
@@ -50,6 +52,10 @@
         return;
     }
 
+    if (_isAuto) {
+        return;
+    }
+    
     for (UITouch *touch in touches)
     {
         CGPoint location  = [touch locationInNode:self];
@@ -86,7 +92,11 @@
     if (_isRunning) {
         return;
     }
-
+    
+    if (_isAuto) {
+        return;
+    }
+    
     CGFloat distance = locationEnd.y - locationBegin.y;
     if (distance <  -100) {
         _isRote = TRUE;
@@ -109,22 +119,40 @@
         [verticalCell update:_deltaTime];
     }
     
+    if (_isAuto) {
+        LCVeticalCell *lastCell = arrVerticalCell[4];
+        if (lastCell.currentState == State_Idle) {
+            for (LCVeticalCell *verticalCell in arrVerticalCell) {
+                verticalCell.currentState = State_Start;
+            }
+        }
+    }
 }
 
 - (void)start {
+    _isRunning = !_isRunning;
+    
     if (_isRunning) {
+        for (int i = 0; i < arrVerticalCell.count; i ++) {
+            LCVeticalCell *cell = arrVerticalCell[i];
+            cell.currentState = State_Start;
+        }
+    } else {
+        
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.25f target:self selector:@selector(updateCounter:) userInfo:nil repeats:YES];
+    }
+}
+
+- (void)updateCounter:(NSTimer *)theTimer {
+    if (_timerCount > 4) {
+        [timer invalidate];
+        timer = Nil;
         return;
     }
     
-    if (_isRote) {
-        return;
-    }
-    _isRunning = TRUE;
-    
-    for (int i = 0; i < arrVerticalCell.count; i ++) {
-        LCVeticalCell *cell = arrVerticalCell[i];
-        cell.currentState = State_Start;
-    }
+    LCVeticalCell *cell = arrVerticalCell[_timerCount];
+    cell.currentState = State_Stop;
+    _timerCount ++;
 }
 
 - (int)cellInLocation:(CGPoint)location {
