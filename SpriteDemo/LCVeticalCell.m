@@ -182,7 +182,10 @@
     _gameScene.isRote = FALSE;
     
     if (currentIndex == 4) {
-        _gameScene.isRunning = FALSE;        
+        _gameScene.isRunning = FALSE;
+        if (_gameScene.isAuto) {
+            [_gameScene start];            
+        }
     }
 }
 @end

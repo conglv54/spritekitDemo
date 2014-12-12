@@ -138,19 +138,14 @@
 }
 
 - (IBAction)spin:(id)sender {
-    if (scene.isAuto || scene.isRote) {
-        return;
-    }
-    
-    [scene start];
-}
-
-- (IBAction)autoGame:(id)sender {
-    if (scene.isRote || scene.isRunning) {
+    if (scene.isRote) {
         return;
     }
     
     scene.isAuto = !scene.isAuto;
+    if (scene.isAuto) {
+        [scene start];        
+    }
 }
 
 - (IBAction)BuyCoint:(id)sender {

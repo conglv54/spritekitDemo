@@ -126,41 +126,15 @@
     for (LCVeticalCell *verticalCell in arrVerticalCell) {
         [verticalCell update:_deltaTime];
     }
-    
-    if (_isAuto) {
-        LCVeticalCell *lastCell = arrVerticalCell[4];
-        if (lastCell.currentState == State_Idle) {
-            for (LCVeticalCell *verticalCell in arrVerticalCell) {
-                verticalCell.currentState = State_Start;
-            }
-        }
-    }
 }
 
 - (void)start {
-    _isRunning = !_isRunning;
-    
-    if (_isRunning) {
-        for (int i = 0; i < arrVerticalCell.count; i ++) {
-            LCVeticalCell *cell = arrVerticalCell[i];
-            cell.currentState = State_Start;
+    LCVeticalCell *lastCell = arrVerticalCell[4];
+    if (lastCell.currentState == State_Idle) {
+        for (LCVeticalCell *verticalCell in arrVerticalCell) {
+            verticalCell.currentState = State_Start;
         }
-    } else {
-        
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.25f target:self selector:@selector(updateCounter:) userInfo:nil repeats:YES];
     }
-}
-
-- (void)updateCounter:(NSTimer *)theTimer {
-    if (_timerCount > 4) {
-        [timer invalidate];
-        timer = Nil;
-        return;
-    }
-    
-    LCVeticalCell *cell = arrVerticalCell[_timerCount];
-    cell.currentState = State_Stop;
-    _timerCount ++;
 }
 
 - (int)cellInLocation:(CGPoint)location {
