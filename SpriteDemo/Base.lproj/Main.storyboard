@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
@@ -17,44 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndp-3G-UTO">
-                                <rect key="frame" x="526" y="517" width="33" height="30"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="spin:" destination="LVB-YS-i5n" eventType="touchUpInside" id="0cv-V1-NXy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Jy-ok-p74">
-                                <rect key="frame" x="473" y="517" width="32" height="30"/>
-                                <state key="normal" title="Auto">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="autoGame:" destination="LVB-YS-i5n" eventType="touchUpInside" id="8q5-Y8-8kO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNh-eT-6RN">
-                                <rect key="frame" x="527" y="258" width="30" height="30"/>
-                                <state key="normal" title="Buy">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BuyCoint:" destination="LVB-YS-i5n" eventType="touchUpInside" id="TlJ-l7-ymE"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="MNh-eT-6RN" secondAttribute="trailing" constant="27" id="23R-qF-FtM"/>
-                            <constraint firstAttribute="centerY" secondItem="MNh-eT-6RN" secondAttribute="centerY" constant="27" id="7yO-RI-ovF"/>
-                            <constraint firstItem="b3d-qh-BLL" firstAttribute="top" secondItem="Ndp-3G-UTO" secondAttribute="bottom" constant="53" id="Mwq-27-oAV"/>
-                            <constraint firstItem="Ndp-3G-UTO" firstAttribute="leading" secondItem="6Jy-ok-p74" secondAttribute="trailing" constant="21" id="RYg-bs-DPA"/>
-                            <constraint firstAttribute="trailing" secondItem="Ndp-3G-UTO" secondAttribute="trailing" constant="41" id="gC5-8R-31D"/>
-                            <constraint firstItem="b3d-qh-BLL" firstAttribute="top" secondItem="6Jy-ok-p74" secondAttribute="bottom" constant="53" id="qlv-Kw-ybH"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>

@@ -8,12 +8,7 @@
 
 #import "UIPopupView.h"
 
-@implementation UIPopupView {
-    UIView *backgroundView;
-    UIView *foregroundView;
-    UIButton *btnClose;
-    
-}
+@implementation UIPopupView 
 
 - (id)init {
     self = [super init];
@@ -24,26 +19,26 @@
 }
 
 - (void)initCompoment {
-    backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 568, 320)];
-    backgroundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    _backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 568, 320)];
+    _backgroundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
 
-    foregroundView = [[UIView alloc] initWithFrame:CGRectMake(0, -320, 568, 320)];
-    foregroundView.backgroundColor = [UIColor clearColor];
+    _foregroundView = [[UIView alloc] initWithFrame:CGRectMake(0, -320, 568, 320)];
+    _foregroundView.backgroundColor = [UIColor clearColor];
     
     UIImage *imageClose = [UIImage imageNamed:@"btnClose"];
-    btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
-    btnClose.frame = CGRectMake(54, 284, imageClose.size.width, imageClose.size.height);
-    [btnClose setImage:imageClose forState:UIControlStateNormal];
-    [btnClose addTarget:self action:@selector(closeView) forControlEvents:UIControlEventTouchUpInside];
+    _btnClose = [UIButton buttonWithType:UIButtonTypeCustom];
+    _btnClose.frame = CGRectMake(54, 284, imageClose.size.width, imageClose.size.height);
+    [_btnClose setImage:imageClose forState:UIControlStateNormal];
+    [_btnClose addTarget:self action:@selector(closeView) forControlEvents:UIControlEventTouchUpInside];
     
     UIImage *bgContentView = [UIImage imageNamed:@"bgPopupView"];
     UIImageView *imvBgContentView = [[UIImageView alloc] initWithImage:bgContentView];
     imvBgContentView.frame = CGRectMake(54, 0, bgContentView.size.width, bgContentView.size.height);
-    [foregroundView addSubview:imvBgContentView];
+    [_foregroundView addSubview:imvBgContentView];
     
-    [foregroundView addSubview:btnClose];
+    [_foregroundView addSubview:_btnClose];
     
-    [foregroundView addSubview:[self viewForContentView]];
+    [_foregroundView addSubview:[self viewForContentView]];
 }
 
 - (UIView *)viewForContentView {
@@ -52,25 +47,25 @@
 
 - (void)showinView:(UIView *)view {
     
-    [view addSubview:backgroundView];
-    [view addSubview:foregroundView];
+    [view addSubview:_backgroundView];
+    [view addSubview:_foregroundView];
     
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        CGRect frame = foregroundView.frame;
+        CGRect frame = _foregroundView.frame;
         frame.origin.y = 0;
-        foregroundView.frame = frame;
+        _foregroundView.frame = frame;
     } completion:^(BOOL finished) {
     }];
 }
 
 - (void)closeView {
     [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        CGRect frame = foregroundView.frame;
+        CGRect frame = _foregroundView.frame;
         frame.origin.y = -320;
-        foregroundView.frame = frame;
+        _foregroundView.frame = frame;
     } completion:^(BOOL finished) {
-        [foregroundView removeFromSuperview];
-        [backgroundView removeFromSuperview];
+        [_foregroundView removeFromSuperview];
+        [_backgroundView removeFromSuperview];
         [self removeFromSuperview];
     }];
 }

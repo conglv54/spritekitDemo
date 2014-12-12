@@ -7,7 +7,8 @@
 //
 
 #import "UIPopupView.h"
+#import "BuyGoldTableViewCell.h"
 
-@interface UIBuyGoldVIew : UIPopupView <UITableViewDataSource, UITableViewDelegate>
+@interface UIBuyGoldVIew : UIPopupView <UITableViewDataSource, UITableViewDelegate, BuyGoldDelegate>
 
 @end

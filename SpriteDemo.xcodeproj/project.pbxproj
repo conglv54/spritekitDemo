@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		580864021A39EE21002F35BE /* UIPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580864011A39EE21002F35BE /* UIPopupView.m */; };
 		580864071A39F152002F35BE /* UIBuyGoldVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 580864061A39F152002F35BE /* UIBuyGoldVIew.m */; };
+		5820E6061A3B0ADB00D6DB98 /* SKNode+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5820E6031A3B0ADB00D6DB98 /* SKNode+Frame.m */; };
+		5820E6071A3B0ADB00D6DB98 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5820E6051A3B0ADB00D6DB98 /* UIView+Frame.m */; };
+		5820E60B1A3B2DA800D6DB98 /* bgBuyGoldCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820E6081A3B2DA800D6DB98 /* bgBuyGoldCell@2x.png */; };
+		5820E60C1A3B2DA800D6DB98 /* btnBuyGold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820E6091A3B2DA800D6DB98 /* btnBuyGold@2x.png */; };
+		5820E60D1A3B2DA800D6DB98 /* icGold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820E60A1A3B2DA800D6DB98 /* icGold@2x.png */; };
+		5820E6101A3B38CE00D6DB98 /* UIPayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5820E60F1A3B38CE00D6DB98 /* UIPayoutView.m */; };
+		5820E6131A3B446900D6DB98 /* bgTxtAmount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820E6111A3B446900D6DB98 /* bgTxtAmount@2x.png */; };
+		5820E6141A3B446900D6DB98 /* bgTxtPaypalAcc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820E6121A3B446900D6DB98 /* bgTxtPaypalAcc@2x.png */; };
+		5820E6161A3B4E7100D6DB98 /* bgRequest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820E6151A3B4E7100D6DB98 /* bgRequest@2x.png */; };
 		5868DB2D1A38829F000CCED1 /* LCVeticalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5868DB2C1A38829F000CCED1 /* LCVeticalCell.m */; };
 		5896AD611A3A050B00C35A1A /* btnClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5896AD5F1A3A050B00C35A1A /* btnClose@2x.png */; };
 		5896AD621A3A050B00C35A1A /* bgPopupView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5896AD601A3A050B00C35A1A /* bgPopupView@2x.png */; };
@@ -64,6 +73,18 @@
 		580864011A39EE21002F35BE /* UIPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPopupView.m; sourceTree = "<group>"; };
 		580864051A39F152002F35BE /* UIBuyGoldVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBuyGoldVIew.h; sourceTree = "<group>"; };
 		580864061A39F152002F35BE /* UIBuyGoldVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBuyGoldVIew.m; sourceTree = "<group>"; };
+		5820E6021A3B0ADB00D6DB98 /* SKNode+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKNode+Frame.h"; sourceTree = "<group>"; };
+		5820E6031A3B0ADB00D6DB98 /* SKNode+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKNode+Frame.m"; sourceTree = "<group>"; };
+		5820E6041A3B0ADB00D6DB98 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		5820E6051A3B0ADB00D6DB98 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		5820E6081A3B2DA800D6DB98 /* bgBuyGoldCell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgBuyGoldCell@2x.png"; sourceTree = "<group>"; };
+		5820E6091A3B2DA800D6DB98 /* btnBuyGold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnBuyGold@2x.png"; sourceTree = "<group>"; };
+		5820E60A1A3B2DA800D6DB98 /* icGold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icGold@2x.png"; sourceTree = "<group>"; };
+		5820E60E1A3B38CE00D6DB98 /* UIPayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPayoutView.h; sourceTree = "<group>"; };
+		5820E60F1A3B38CE00D6DB98 /* UIPayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPayoutView.m; sourceTree = "<group>"; };
+		5820E6111A3B446900D6DB98 /* bgTxtAmount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgTxtAmount@2x.png"; sourceTree = "<group>"; };
+		5820E6121A3B446900D6DB98 /* bgTxtPaypalAcc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgTxtPaypalAcc@2x.png"; sourceTree = "<group>"; };
+		5820E6151A3B4E7100D6DB98 /* bgRequest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgRequest@2x.png"; sourceTree = "<group>"; };
 		5868DB2B1A38829F000CCED1 /* LCVeticalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVeticalCell.h; sourceTree = "<group>"; };
 		5868DB2C1A38829F000CCED1 /* LCVeticalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVeticalCell.m; sourceTree = "<group>"; };
 		5868DB2E1A38A21B000CCED1 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -133,6 +154,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5820E6011A3B0ADB00D6DB98 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5820E6021A3B0ADB00D6DB98 /* SKNode+Frame.h */,
+				5820E6031A3B0ADB00D6DB98 /* SKNode+Frame.m */,
+				5820E6041A3B0ADB00D6DB98 /* UIView+Frame.h */,
+				5820E6051A3B0ADB00D6DB98 /* UIView+Frame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		6E3E462D1A36AFD6000DD2FA = {
 			isa = PBXGroup;
 			children = (
@@ -170,8 +202,11 @@
 				580864011A39EE21002F35BE /* UIPopupView.m */,
 				580864051A39F152002F35BE /* UIBuyGoldVIew.h */,
 				580864061A39F152002F35BE /* UIBuyGoldVIew.m */,
+				5820E60E1A3B38CE00D6DB98 /* UIPayoutView.h */,
+				5820E60F1A3B38CE00D6DB98 /* UIPayoutView.m */,
 				5896AD651A3A107E00C35A1A /* BuyGoldTableViewCell.h */,
 				5896AD661A3A107E00C35A1A /* BuyGoldTableViewCell.m */,
+				5820E6011A3B0ADB00D6DB98 /* Category */,
 				6E3E464B1A36AFD7000DD2FA /* Images.xcassets */,
 				6E3E464D1A36AFD7000DD2FA /* LaunchScreen.xib */,
 				6E3E46641A36B067000DD2FA /* Resource */,
@@ -211,7 +246,10 @@
 			isa = PBXGroup;
 			children = (
 				5896AD631A3A084500C35A1A /* Oswald-Bold.otf */,
+				5820E6111A3B446900D6DB98 /* bgTxtAmount@2x.png */,
+				5820E6121A3B446900D6DB98 /* bgTxtPaypalAcc@2x.png */,
 				6E3E46651A36B067000DD2FA /* bg@2x.png */,
+				5820E6151A3B4E7100D6DB98 /* bgRequest@2x.png */,
 				6E3E46661A36B067000DD2FA /* bgBet@2x.png */,
 				6E3E46671A36B067000DD2FA /* bgCenterMachine@2x.png */,
 				6E3E46681A36B067000DD2FA /* bgHeader@2x.png */,
@@ -236,6 +274,9 @@
 				6E3E467B1A36B067000DD2FA /* jackPot3@2x.png */,
 				5896AD5F1A3A050B00C35A1A /* btnClose@2x.png */,
 				5896AD601A3A050B00C35A1A /* bgPopupView@2x.png */,
+				5820E6081A3B2DA800D6DB98 /* bgBuyGoldCell@2x.png */,
+				5820E6091A3B2DA800D6DB98 /* btnBuyGold@2x.png */,
+				5820E60A1A3B2DA800D6DB98 /* icGold@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -321,20 +362,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E3E46861A36B067000DD2FA /* bgWin@2x.png in Resources */,
+				5820E60B1A3B2DA800D6DB98 /* bgBuyGoldCell@2x.png in Resources */,
 				6E3E46801A36B067000DD2FA /* bgLeft@2x.png in Resources */,
 				6E3E46841A36B067000DD2FA /* bgMoney@2x.png in Resources */,
 				6E3E464F1A36AFD7000DD2FA /* LaunchScreen.xib in Resources */,
 				5896AD621A3A050B00C35A1A /* bgPopupView@2x.png in Resources */,
 				6E3E46891A36B067000DD2FA /* btnHistory@2x.png in Resources */,
+				5820E6161A3B4E7100D6DB98 /* bgRequest@2x.png in Resources */,
 				6E3E467D1A36B067000DD2FA /* bgBet@2x.png in Resources */,
+				5820E60C1A3B2DA800D6DB98 /* btnBuyGold@2x.png in Resources */,
 				5896AD611A3A050B00C35A1A /* btnClose@2x.png in Resources */,
+				5820E6131A3B446900D6DB98 /* bgTxtAmount@2x.png in Resources */,
 				6E3E468A1A36B067000DD2FA /* btnMaxBet@2x.png in Resources */,
 				6E3E464C1A36AFD7000DD2FA /* Images.xcassets in Resources */,
 				6E3E46811A36B067000DD2FA /* bgLevel@2x.png in Resources */,
 				6E3E46851A36B067000DD2FA /* bgRight@2x.png in Resources */,
+				5820E6141A3B446900D6DB98 /* bgTxtPaypalAcc@2x.png in Resources */,
 				6E3E46911A36B067000DD2FA /* jackPot2@2x.png in Resources */,
 				6E3E46821A36B067000DD2FA /* bgMachine@2x.png in Resources */,
 				6E3E46871A36B067000DD2FA /* btnBet@2x.png in Resources */,
+				5820E60D1A3B2DA800D6DB98 /* icGold@2x.png in Resources */,
 				6E3E46441A36AFD7000DD2FA /* GameScene.sks in Resources */,
 				6E3E46881A36B067000DD2FA /* btnBuy@2x.png in Resources */,
 				6E3E464A1A36AFD7000DD2FA /* Main.storyboard in Resources */,
@@ -371,11 +418,14 @@
 				580864071A39F152002F35BE /* UIBuyGoldVIew.m in Sources */,
 				6E3E46471A36AFD7000DD2FA /* GameViewController.m in Sources */,
 				6E3E463F1A36AFD7000DD2FA /* AppDelegate.m in Sources */,
+				5820E6101A3B38CE00D6DB98 /* UIPayoutView.m in Sources */,
 				6E3E46421A36AFD7000DD2FA /* GameScene.m in Sources */,
 				5896AD671A3A107E00C35A1A /* BuyGoldTableViewCell.m in Sources */,
 				6E8514FF1A38458A00AE65C2 /* Utils.m in Sources */,
+				5820E6061A3B0ADB00D6DB98 /* SKNode+Frame.m in Sources */,
 				6E3E463C1A36AFD7000DD2FA /* main.m in Sources */,
 				580864021A39EE21002F35BE /* UIPopupView.m in Sources */,
+				5820E6071A3B0ADB00D6DB98 /* UIView+Frame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

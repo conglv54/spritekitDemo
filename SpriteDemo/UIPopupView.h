@@ -10,6 +10,10 @@
 
 @interface UIPopupView : UIView
 
+@property (nonatomic, strong) UIView *foregroundView;
+@property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, strong) UIButton *btnClose;
+
 - (void)showinView:(UIView *)view;
 - (UIView *)viewForContentView;
 

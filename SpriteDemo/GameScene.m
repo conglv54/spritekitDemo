@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "LCVeticalCell.h"
+#import "SKNode+Frame.h"
 
 @implementation GameScene {
     NSMutableArray *arrVerticalCell;
@@ -30,6 +31,13 @@
         arrVerticalCell = [NSMutableArray new];
         _isAuto = FALSE;
         
+        SKSpriteNode *bg = [SKSpriteNode spriteNodeWithImageNamed:@"bgMachine"];
+        bg.anchorPoint = CGPointMake(0, 0);
+        bg.position = [self newPoint:CGPointMake(102.5, 62)];
+        bg.size = [self newSize:CGSizeMake(366, 204.5)];
+        
+        [self addChild:bg];
+
         for (int i = 0 ; i < 5; i ++) {
             LCVeticalCell *verticalCell = [[LCVeticalCell alloc] initWithIndex:i];
             verticalCell.gameScene = self;

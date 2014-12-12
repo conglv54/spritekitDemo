@@ -111,9 +111,9 @@
     if (isGenResult) {
         for (SKSpriteNode *node in _arrCell) {
             if ([node.name isEqualToString:@"Result"]) {
-                if (node.position.y <= 192) {
-                    CGFloat distance = 192 - node.position.y;
-                    [node setPosition:CGPointMake(node.position.x, 192)];
+                if (node.position.y <= 132) {
+                    CGFloat distance = 132 - node.position.y;
+                    [node setPosition:CGPointMake(node.position.x, 132)];
                     
                     for (SKSpriteNode *node in _arrCell) {
                         if ([node.name isEqualToString:@"Cell"]) {
@@ -137,7 +137,7 @@
         int slot = arc4random()%4;
         NSString *name = @"Cell";
         
-        if (velocityY.y > - 550 && _currentState == State_Stop && isGenResult == FALSE) {
+        if (velocityY.y > - 600 && _currentState == State_Stop && isGenResult == FALSE) {
             isGenResult = TRUE;
             slot = _result;
             name = @"Result";

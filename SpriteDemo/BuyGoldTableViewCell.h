@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BuyGoldDelegate <NSObject>
+
+- (void)buyGoldWithIndex:(int)index;
+
+@end
+
 @interface BuyGoldTableViewCell : UITableViewCell
+
+@property (nonatomic) int index;
+@property (nonatomic, assign) id<BuyGoldDelegate> delegate;
 
 @end

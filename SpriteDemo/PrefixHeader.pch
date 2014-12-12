@@ -10,5 +10,5 @@
 #define SpriteDemo_PrefixHeader_pch
 
 #import "Utils.h"
-
+#import "UIView+Frame.h"
 #endif
