@@ -9,6 +9,8 @@
 #import "GameViewController.h"
 #import "UIBuyGoldVIew.h"
 #import "UIPayoutView.h"
+#import "UIHistoryView.h"
+
 #import "GameScene.h"
 #import "UIView+Frame.h"
 
@@ -16,14 +18,12 @@
     GameScene *scene;
     UIBuyGoldVIew *buyGold;
     UIPayoutView *payOutView;
+    UIHistoryView *historyView;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    buyGold = [[UIBuyGoldVIew alloc] init];
-    payOutView = [[UIPayoutView alloc] init];
     
     UIImage *imgBg = [UIImage imageNamed:@"bg"];
     UIImageView *imvBg = [[UIImageView alloc]initWithImage:imgBg];
@@ -78,6 +78,7 @@
     UIImage *imgHistory = [UIImage imageNamed:@"btnHistory"];
     UIButton *btnHistory = [UIButton buttonWithType:UIButtonTypeCustom];
     [btnHistory setImage:imgHistory forState:UIControlStateNormal];
+    [btnHistory addTarget:self action:@selector(showHistory) forControlEvents:UIControlEventTouchUpInside];
     [btnHistory setNewFrame:CGRectMake(102, 263, imgHistory.size.width, imgHistory.size.height)];
     [self.view addSubview:btnHistory];
     
@@ -153,11 +154,24 @@
 }
 
 - (IBAction)BuyCoint:(id)sender {
+    if (!buyGold) {
+        buyGold = [[UIBuyGoldVIew alloc] init];
+    }
     [buyGold showinView:self.view];
 }
 
 - (void)payOut {
+    if (!payOutView) {
+        payOutView = [[UIPayoutView alloc] init];
+    }
     [payOutView showinView:self.view];
+}
+
+- (void)showHistory {
+    if (!historyView) {
+        historyView  = [[UIHistoryView alloc] init];
+    }
+    [historyView showinView:self.view];
 }
 
 - (void)didReceiveMemoryWarning

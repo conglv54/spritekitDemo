@@ -18,6 +18,8 @@
 		5820E6131A3B446900D6DB98 /* bgTxtAmount@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820E6111A3B446900D6DB98 /* bgTxtAmount@2x.png */; };
 		5820E6141A3B446900D6DB98 /* bgTxtPaypalAcc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820E6121A3B446900D6DB98 /* bgTxtPaypalAcc@2x.png */; };
 		5820E6161A3B4E7100D6DB98 /* bgRequest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820E6151A3B4E7100D6DB98 /* bgRequest@2x.png */; };
+		5820E6191A3B52A800D6DB98 /* UIHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5820E6181A3B52A700D6DB98 /* UIHistoryView.m */; };
+		5820E61C1A3B57BE00D6DB98 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5820E61B1A3B57BE00D6DB98 /* HistoryTableViewCell.m */; };
 		5868DB2D1A38829F000CCED1 /* LCVeticalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5868DB2C1A38829F000CCED1 /* LCVeticalCell.m */; };
 		5896AD611A3A050B00C35A1A /* btnClose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5896AD5F1A3A050B00C35A1A /* btnClose@2x.png */; };
 		5896AD621A3A050B00C35A1A /* bgPopupView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5896AD601A3A050B00C35A1A /* bgPopupView@2x.png */; };
@@ -85,6 +87,10 @@
 		5820E6111A3B446900D6DB98 /* bgTxtAmount@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgTxtAmount@2x.png"; sourceTree = "<group>"; };
 		5820E6121A3B446900D6DB98 /* bgTxtPaypalAcc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgTxtPaypalAcc@2x.png"; sourceTree = "<group>"; };
 		5820E6151A3B4E7100D6DB98 /* bgRequest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgRequest@2x.png"; sourceTree = "<group>"; };
+		5820E6171A3B52A700D6DB98 /* UIHistoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHistoryView.h; sourceTree = "<group>"; };
+		5820E6181A3B52A700D6DB98 /* UIHistoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHistoryView.m; sourceTree = "<group>"; };
+		5820E61A1A3B57BE00D6DB98 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
+		5820E61B1A3B57BE00D6DB98 /* HistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
 		5868DB2B1A38829F000CCED1 /* LCVeticalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCVeticalCell.h; sourceTree = "<group>"; };
 		5868DB2C1A38829F000CCED1 /* LCVeticalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCVeticalCell.m; sourceTree = "<group>"; };
 		5868DB2E1A38A21B000CCED1 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -206,6 +212,10 @@
 				5820E60F1A3B38CE00D6DB98 /* UIPayoutView.m */,
 				5896AD651A3A107E00C35A1A /* BuyGoldTableViewCell.h */,
 				5896AD661A3A107E00C35A1A /* BuyGoldTableViewCell.m */,
+				5820E61A1A3B57BE00D6DB98 /* HistoryTableViewCell.h */,
+				5820E61B1A3B57BE00D6DB98 /* HistoryTableViewCell.m */,
+				5820E6171A3B52A700D6DB98 /* UIHistoryView.h */,
+				5820E6181A3B52A700D6DB98 /* UIHistoryView.m */,
 				5820E6011A3B0ADB00D6DB98 /* Category */,
 				6E3E464B1A36AFD7000DD2FA /* Images.xcassets */,
 				6E3E464D1A36AFD7000DD2FA /* LaunchScreen.xib */,
@@ -418,11 +428,13 @@
 				580864071A39F152002F35BE /* UIBuyGoldVIew.m in Sources */,
 				6E3E46471A36AFD7000DD2FA /* GameViewController.m in Sources */,
 				6E3E463F1A36AFD7000DD2FA /* AppDelegate.m in Sources */,
+				5820E61C1A3B57BE00D6DB98 /* HistoryTableViewCell.m in Sources */,
 				5820E6101A3B38CE00D6DB98 /* UIPayoutView.m in Sources */,
 				6E3E46421A36AFD7000DD2FA /* GameScene.m in Sources */,
 				5896AD671A3A107E00C35A1A /* BuyGoldTableViewCell.m in Sources */,
 				6E8514FF1A38458A00AE65C2 /* Utils.m in Sources */,
 				5820E6061A3B0ADB00D6DB98 /* SKNode+Frame.m in Sources */,
+				5820E6191A3B52A800D6DB98 /* UIHistoryView.m in Sources */,
 				6E3E463C1A36AFD7000DD2FA /* main.m in Sources */,
 				580864021A39EE21002F35BE /* UIPopupView.m in Sources */,
 				5820E6071A3B0ADB00D6DB98 /* UIView+Frame.m in Sources */,
