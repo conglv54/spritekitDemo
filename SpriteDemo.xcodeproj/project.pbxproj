@@ -26,6 +26,7 @@
 		5896AD621A3A050B00C35A1A /* bgPopupView@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5896AD601A3A050B00C35A1A /* bgPopupView@2x.png */; };
 		5896AD641A3A084500C35A1A /* Oswald-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5896AD631A3A084500C35A1A /* Oswald-Bold.otf */; };
 		5896AD671A3A107E00C35A1A /* BuyGoldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5896AD661A3A107E00C35A1A /* BuyGoldTableViewCell.m */; };
+		5898843F1A3C448700AC1124 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898843E1A3C448700AC1124 /* User.m */; };
 		6E3E463C1A36AFD7000DD2FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E463B1A36AFD7000DD2FA /* main.m */; };
 		6E3E463F1A36AFD7000DD2FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E463E1A36AFD7000DD2FA /* AppDelegate.m */; };
 		6E3E46421A36AFD7000DD2FA /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E46411A36AFD7000DD2FA /* GameScene.m */; };
@@ -100,6 +101,8 @@
 		5896AD631A3A084500C35A1A /* Oswald-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.otf"; sourceTree = "<group>"; };
 		5896AD651A3A107E00C35A1A /* BuyGoldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyGoldTableViewCell.h; sourceTree = "<group>"; };
 		5896AD661A3A107E00C35A1A /* BuyGoldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyGoldTableViewCell.m; sourceTree = "<group>"; };
+		5898843D1A3C448700AC1124 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		5898843E1A3C448700AC1124 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		6E3E46361A36AFD6000DD2FA /* SpriteDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3E463A1A36AFD6000DD2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E3E463B1A36AFD7000DD2FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				6E3E46451A36AFD7000DD2FA /* GameViewController.h */,
 				6E3E46461A36AFD7000DD2FA /* GameViewController.m */,
 				6E3E46481A36AFD7000DD2FA /* Main.storyboard */,
+				5898843D1A3C448700AC1124 /* User.h */,
+				5898843E1A3C448700AC1124 /* User.m */,
 				5870FA4F1A3C2687008D1328 /* Scene */,
 				5870FA4E1A3C2650008D1328 /* VIew */,
 				5820E6011A3B0ADB00D6DB98 /* Category */,
@@ -453,6 +458,7 @@
 				6E3E46471A36AFD7000DD2FA /* GameViewController.m in Sources */,
 				6E3E463F1A36AFD7000DD2FA /* AppDelegate.m in Sources */,
 				5820E61C1A3B57BE00D6DB98 /* HistoryTableViewCell.m in Sources */,
+				5898843F1A3C448700AC1124 /* User.m in Sources */,
 				5820E6101A3B38CE00D6DB98 /* UIPayoutView.m in Sources */,
 				6E3E46421A36AFD7000DD2FA /* GameScene.m in Sources */,
 				5896AD671A3A107E00C35A1A /* BuyGoldTableViewCell.m in Sources */,

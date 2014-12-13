@@ -16,9 +16,15 @@
 
 @implementation GameViewController {
     GameScene *scene;
+    
     UIBuyGoldVIew *buyGold;
     UIPayoutView *payOutView;
     UIHistoryView *historyView;
+    
+    UILabel *lblTotalCoin;
+    UILabel *lblBet;
+    UILabel *MaxBet;
+    
 }
 
 - (void)viewDidLoad
@@ -117,15 +123,16 @@
     [imvWin setNewFrame:CGRectMake(396, 263, imgBgWin.size.width, imgBgWin.size.height)];
     [self.view addSubview:imvWin];
     
+ 
+    lblTotalCoin = [[UILabel alloc] init];
+    [lblTotalCoin setNewFrame:CGRectMake(272, 22, 80, 20)];
+    lblTotalCoin.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:10];
+    lblTotalCoin.textColor = [UIColor whiteColor];
+    lblTotalCoin.text = @"1000000";
+    [self.view addSubview:lblTotalCoin];
+    
     [self initScene];
 }
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    
-    
-}
-
 
 - (void)initScene {
     // Configure the view.
