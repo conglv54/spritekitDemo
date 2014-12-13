@@ -40,10 +40,11 @@
     imvHeader.frame = CGRectMake(0, 0, imgHeader.size.width, imgHeader.size.height);
     [self.view addSubview:imvHeader];
     
-    UIImage *imgLevel = [UIImage imageNamed:@"bgLevel"];
-    UIImageView *imvLevel = [[UIImageView alloc]initWithImage:imgLevel];
-    [imvLevel setNewFrame:CGRectMake(101, 15, imgLevel.size.width, imgLevel.size.height)];
-    [self.view addSubview:imvLevel];
+    UIImage *imgFreeCoin = [UIImage imageNamed:@"btnFreeCoin"];
+    UIButton *btnFreeCoin = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnFreeCoin setImage:imgFreeCoin forState:UIControlStateNormal];
+    [btnFreeCoin setNewFrame:CGRectMake(101, 20, imgFreeCoin.size.width, imgFreeCoin.size.height)];
+    [self.view addSubview:btnFreeCoin];
     
     UIImage *imgMoney = [UIImage imageNamed:@"bgMoney"];
     UIImageView *imvMoney = [[UIImageView alloc]initWithImage:imgMoney];
@@ -115,12 +116,18 @@
     UIImageView *imvWin = [[UIImageView alloc] initWithImage:imgBgWin];
     [imvWin setNewFrame:CGRectMake(396, 263, imgBgWin.size.width, imgBgWin.size.height)];
     [self.view addSubview:imvWin];
-
+    
+    [self initScene];
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
+    
+}
+
+
+- (void)initScene {
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;

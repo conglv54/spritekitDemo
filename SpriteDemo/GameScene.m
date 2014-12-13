@@ -15,6 +15,7 @@
     
     NSTimeInterval _lastUpdateTime;
     NSTimeInterval _deltaTime;
+    NSTimeInterval _lastTouch;
     
     CGPoint locationBegin;
     int index;
@@ -51,14 +52,11 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     for (UITouch *touch in touches) {
         locationBegin  = [touch locationInNode:self];
+        _lastTouch = [event timestamp];
     }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    if (_isRunning) {
-        return;
-    }
 
     if (_isAuto) {
         return;
@@ -97,18 +95,24 @@
         return;
     }
     
-    if (_isRunning) {
-        return;
-    }
-    
     if (_isAuto) {
         return;
     }
     
+    NSTimeInterval touchBeginEndInterval = [event timestamp] - _lastTouch;
     CGFloat distance = locationEnd.y - locationBegin.y;
-    if (distance <  -100) {
+    
+    CGFloat vRote = distance/touchBeginEndInterval/2;
+    NSLog(@"%f", vRote);
+    
+    if (vRote < -900) {
+        vRote = - 900;
+    }
+    
+    if (vRote <  - 250) {
         _isRote = TRUE;
-        cell.currentState = State_Start;
+        cell.velocityDefault = - vRote;
+        [cell stepState];
     }
 }
 
@@ -132,7 +136,7 @@
     LCVeticalCell *lastCell = arrVerticalCell[4];
     if (lastCell.currentState == State_Idle) {
         for (LCVeticalCell *verticalCell in arrVerticalCell) {
-            verticalCell.currentState = State_Start;
+            [verticalCell stepState];
         }
     }
 }

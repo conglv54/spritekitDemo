@@ -19,7 +19,9 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, weak) GameScene *gameScene;
 @property (nonatomic)       GameState currentState;
+@property (nonatomic)       BOOL isReciveResult;
 @property (nonatomic)       int result;
+@property (nonatomic)       CGFloat velocityDefault;
 
 - (id)initWithIndex:(int)index;
 - (void)changeLocationWithDistance:(CGFloat)distance;

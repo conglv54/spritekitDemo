@@ -11,7 +11,6 @@
 @interface GameScene : SKScene
 
 @property (nonatomic) BOOL isAuto;
-@property (nonatomic) BOOL isRunning;
 @property (nonatomic) BOOL isRote;
 
 @property (nonatomic) int timerCount;

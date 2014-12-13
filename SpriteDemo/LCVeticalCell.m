@@ -10,6 +10,7 @@
 
 @implementation LCVeticalCell {
     NSMutableArray *_arrCell;
+    
     CGPoint velocityY;
     
     BOOL isGenResult;
@@ -24,6 +25,8 @@
     if (self) {
         _arrCell = [NSMutableArray new];
         currentIndex = index;
+        _isReciveResult = TRUE;
+        _velocityDefault = 500;
         
         for (int i = 0; i < 6; i ++) {
             CGPoint position = CGPointMake(102.5+75*index, 62 + (65*i));
@@ -65,7 +68,19 @@
 }
 
 - (void)stepState {
-    
+    switch (_currentState) {
+        case State_Idle:
+            _currentState = State_Start;
+            break;
+        case State_Start:
+            _currentState = State_Stop;
+            break;
+        case  State_Stop:
+            _currentState = State_Idle;
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)update:(NSTimeInterval)deltaTime {
@@ -77,14 +92,14 @@
         case State_Idle:
             break;
         case  State_Start:
-            velocityY.y = velocityY.y - OBJECT_VELOCITY*deltaTime;
+            velocityY.y = velocityY.y - _velocityDefault*deltaTime;
             
             if (velocityY.y < - MAX_VELOCITY) {
                 velocityY.y = - MAX_VELOCITY;
-                if (_gameScene.isAuto || _gameScene.isRote) {
+                if (_isReciveResult) {
                     extraTime = extraTime + deltaTime;
                     if (extraTime > currentIndex*0.25) {
-                        _currentState = State_Stop;
+                        [self stepState];
                     }                    
                 }
             }
@@ -152,7 +167,7 @@
         [_arrCell removeObject:minNode];
     }
     
-    if (maxNode.position.y > 452) {
+    if (maxNode.position.y > 387) {
         int slot = arc4random()%4;
         NSString *name = @"Cell";
 
@@ -174,15 +189,17 @@
 
 - (void)reset {
     velocityY.y = 0;
+    _velocityDefault = 500;
+    
     extraTime = 0;
-    _currentState = State_Idle;
     isGenResult = FALSE;
     
     _gameScene.timerCount = 0;
     _gameScene.isRote = FALSE;
     
+    [self stepState];
+    
     if (currentIndex == 4) {
-        _gameScene.isRunning = FALSE;
         if (_gameScene.isAuto) {
             [_gameScene start];            
         }
